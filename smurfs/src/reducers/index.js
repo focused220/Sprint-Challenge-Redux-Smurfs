@@ -41,7 +41,7 @@ const initialState = {
        smurfs: [...state.smurfs, action.payload],
        error: ''
      };
-     default: return state;
+     default: return state;  
    }
      
  }
