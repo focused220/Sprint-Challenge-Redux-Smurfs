@@ -32,15 +32,15 @@ const initialState = {
        error: ''
      };
      case ADD_SMURF:
-     console.log(action.payload)
-     console.log(state.smurfs)
+     console.log('reducer', action.payload)
+     console.log('reducer', state.smurfs)
      const newSmurf = action.payload;
      return{
        ...state,
        addingSmurf: true,
        smurfs: [...state.smurfs, action.payload],
-       error: ''
-     };
+       error: '',
+       };
      default: return state;  
    }
      

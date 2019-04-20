@@ -39,9 +39,21 @@ class App extends Component {
       age: this.state.age,
       height: this.state.height
     };
-    console.log(newSmurf)
+    this.clearFields(); 
+    console.log('app' , newSmurf)
+    console.log('app' , newSmurf)
     this.props.addSmurf(newSmurf); 
-    
+       
+  }
+
+  clearFields = () =>{
+    const name = document.getElementById('name');
+    const age = document.getElementById('age');
+    const height = document.getElementById('height');
+
+    name.value = '';
+    age.value = '';
+    height.value = '';
   }
 
   render() {
@@ -56,7 +68,7 @@ class App extends Component {
           placeholder='Smurf Age'/>
           <input type='text' name='height' id='height' onChange={this.handleChange}
           placeholder='Smurf Height'/>
-          <button type='submit'>Add Smurf</button>          
+          <button type='submit' onClick={this.clearFields}>Add Smurf</button>          
         </form>
       </div>
         <div className="smurf-list">
