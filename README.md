@@ -22,9 +22,23 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+- [ x ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+  -Actions: Are instructions given to a reducer to determine if/how state will change based on events or certain time periods within an app's lifecycle. In Redux, they allow the programmer to configure predetermined behavior (or actions) within an app that will produce a specific state change. 
+
+  -Reducers: Create/Produce a new state within an app based on instructions given by Actions. If an app was a business, the actions would be a customer's order and the reducer would be the work done in the back that produces/delivers the order to customer specifications. 
+
+  -Store: This is where the Reducer 'delivers' the products defined in the Actions, that were requested by events triggered within the App. The store is where all of the App's working data and knowledge of state comes from. It is considered a single source of truth because it's the only place where the data/content the app has to work with lives.
+
+- [ x ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  -Application state describes data/functionality integral to the overall operation of an application and is present regardless of what happens within the individual app components. 
+  -Component state describes data/functionality required for operations specific to individual an individual Component(s). 
+  -It's important to have Application level state when dealing with credentials and authentication. It's also important for passing data that changes between dissimilar parts of an application that need to reference a standard state model. If none of the above is true then Component level state can be passed between app Components without the need of having an over-arching state model.
+
+- [ x ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  -Redux-Thunk is form of middleware. It sits in the middle of application components and allows for increased modulation of state data and operations within an application through the use of function nesting. The middleware is a function that accepts another function which performs an operation and returns the result back up the same chain. It makes action creators more robust because the instructions sent from actions are now open to a wider range of operations within pure JS functions.
 
 ## Project Set Up
 
